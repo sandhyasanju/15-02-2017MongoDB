@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  div.row
+    div.col-md-6.form-group.col-md-offset-3
+      h1= title
+      p Welcome to #{title}
+  form(action="/register",method="POST",enctype="multipart/form-data")
+    div.row
+      div.col-md-6.col-md-offset-3
+        div.col-md-12.form-group
+          label(for="uname") User Name
+          input(type="text",id="uname",name="username",class="form-control",placeholder="User Name")
+        div.col-md-12.form-group
+          label(for="id") Employee ID
+          input(type="text",id="uid",name="id",class="form-control",placeholder="Employee ID")
+        div.col-md-6.form-group
+          label(for="dob") DOB
+          input(type="date",id="dob",name="dateOfBirth",class="form-control",placeholder="dd/mm/yyyy")
+        div.col-md-6.form-group
+          label(for="age") Age
+          input(type="number",id="age",name="age",class="form-control",placeholder="Age")
+        div.col-md-12.form-group
+          label(for="city") City
+          input(type="text",id="city",name="city",class="form-control",placeholder="City")
+        div.col-md-12.form-group
+          input(type="submit",value="Register",class="form-control btn btn-primary")
+  form(method="get",action="/details")
+    div.row
+      div.col-md-6.col-md-offset-3
+        div.col-md-12.form-group
+          input(type="submit",value="Get Records",class="form-control btn btn-primary")
